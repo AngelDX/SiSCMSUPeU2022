@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="container ml-auto mr-auto py-3 px-3">
-        <main class="flex">
-            <section class="pb-20 mr-6 w-2/3">
+        <main class="grid lg:grid-cols-2">
+            <section class="pb-20 lg:mr-9">
                 <h1 class="text-3xl font-bold text-gray-900 mb-4 mt-4">{{ $post->name }}</h1>
                 <div class="text-lg mb-2">
                     {{$post->extract}}
@@ -19,7 +19,7 @@
                 </div>
             </section>
              {{-- Contenido relacionado --}}
-             <aside class="w-1/3">
+             <aside class="">
                 <h1 class="text-2xl font-bold text-gray-100 mb-2">Más en {{$post->category->name}}</h1>
                 <ul>
                     @foreach ($similares as $item)
@@ -36,6 +36,6 @@
                     @endforeach
                 </ul>
             </aside>
-          </main>
+        </main>
     </div>
 </x-app-layout>

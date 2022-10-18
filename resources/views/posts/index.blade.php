@@ -5,7 +5,7 @@
             <a href="{{route('posts.show',$post)}}">
             <div class="max-w-sm rounded overflow-hidden shadow-lg m-2">
                 <img class="w-full" src="{{Storage::url($post->image->url)}}">
-                <div class="px-6 py-4">
+                <div class="px-6 py-4 h-56">
                   <div class="font-bold text-xl mb-2">{{$post->name}}</div>
                   <p class="text-gray-700 text-base">
                     {{$post->extract}}
@@ -19,6 +19,9 @@
                     @endforeach
                     <span class="inline-block bg-orange-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-900 font-bold mr-2 mb-2">
                         {{$post->category->name}}
+                    </span>
+                    <span>
+                        <x-jet-button>Editar</x-jet-button>
                     </span>
                 </div>
             </div>

@@ -12,7 +12,7 @@ class PostController extends Controller{
 
     public function index(){
         $posts=Post::where('status',2)
-        ->latest('id')->paginate(8);
+        ->latest('id')->paginate(12);
         return view('posts.index',compact('posts'));
     }
 
