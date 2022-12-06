@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    protected $guarded=['id'];
     //Relación inversa 1 a *
     public function category(){
         return $this->belongsTo(Category::class);
@@ -29,5 +30,5 @@ class Post extends Model
     public function getRouteKeyName(){
         return 'slug';
     }
-    
+
 }

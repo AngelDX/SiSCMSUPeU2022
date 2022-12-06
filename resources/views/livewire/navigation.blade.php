@@ -38,12 +38,20 @@
               @auth
                 <a href="{{route('dashboard')}}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
                 <a href="{{route('categories')}}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Categorias</a>
+                <a href="{{route('posts')}}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Noticias</a>
               @else
-                @foreach ($categories as $category)
-                  <a href="{{route('posts.category',$category)}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                      {{$category->name}}
-                  </a>
-                @endforeach
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                    INICIO
+                </a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                    EMPRESA
+                </a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                    PRODUCTOS
+                </a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                    NOTICIAS
+                </a>
               @endauth
             </div>
           </div>

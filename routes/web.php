@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Livewire\CrudCategory;
+use App\Http\Livewire\CrudPost;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
     Route::get('/categories',CrudCategory::class)->name('categories');
+    Route::get('/posts',CrudPost::class)->name('posts');
+    Route::get('/post-create',[CrudPost::class,'create'])->name('post-create');
+    Route::post('/post-create',[CrudPost::class,'store']);
+    Route::get('/post-edit/{post}',[CrudPost::class,'edit'])->name('post-edit');
+    Route::put('/post-update/{post}',[CrudPost::class,'update'])->name('post-update');
 });
 
 

@@ -1,5 +1,10 @@
 <x-app-layout>
     <div class="container m-auto mt-4">
+        @foreach ($categories as $category)
+            <a href="{{route('posts.category',$category)}}" class="text-gray-900 bg-gray-400 m-1 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                {{$category->name}}
+            </a>
+        @endforeach
         <div class="grid lg:grid-cols-4 md:grid-cols-2">
             @foreach ($posts as $post)
             <a href="{{route('posts.show',$post)}}">
@@ -19,9 +24,6 @@
                     @endforeach
                     <span class="inline-block bg-orange-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-900 font-bold mr-2 mb-2">
                         {{$post->category->name}}
-                    </span>
-                    <span>
-                        <x-jet-button>Editar</x-jet-button>
                     </span>
                 </div>
             </div>
