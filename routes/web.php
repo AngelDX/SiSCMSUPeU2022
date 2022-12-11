@@ -3,6 +3,7 @@
 use App\Http\Controllers\PostController;
 use App\Http\Livewire\CrudCategory;
 use App\Http\Livewire\CrudPost;
+use App\Http\Livewire\IndexLivewire;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-Route::get('/',[PostController::class,'index'])->name('posts.index');
+Route::get('/',[IndexLivewire::class,'render'])->name('index');
+Route::get('/productos',[PostController::class,'index'])->name('posts.index');
 Route::get('category/{category}',[PostController::class,'category'])->name('posts.category');
 Route::get('post/{post}',[PostController::class,'show'])->name('posts.show');
 
@@ -38,6 +40,8 @@ Route::middleware([
     Route::post('/post-create',[CrudPost::class,'store']);
     Route::get('/post-edit/{post}',[CrudPost::class,'edit'])->name('post-edit');
     Route::put('/post-update/{post}',[CrudPost::class,'update'])->name('post-update');
+
+    //Route::resource('posts',CrudPost::class)->names('admin.posts');
 });
 
 

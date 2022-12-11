@@ -51,12 +51,11 @@
             <div class="flex justify-between mx-2 mb-6">
                 <div class="mb-2 md:mr-2 md:mb-0 w-full">
                     <div class="image-wrapper">
-                        @if ($post->image)
-                            <img src="{{Storage::url($post->image->url)}}" alt="">
+                        @if($post->image)
+                            <img id="picture" src="{{Storage::url($post->image->url)}}" alt="">
                         @else
                             <img id="picture" src="/storage/posts/default.webp" alt="">
                         @endif
-
                     </div>
                 </div>
                 <div class="mb-2 md:mr-2 md:mb-0 w-full">
