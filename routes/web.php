@@ -42,6 +42,7 @@ Route::middleware([
     Route::put('/post-update/{post}',[CrudPost::class,'update'])->name('post-update');
 
     //Route::resource('posts',CrudPost::class)->names('admin.posts');
+    Route::get('/categories/pdf', [CrudCategory::class, 'createPDF']);
 });
 
 

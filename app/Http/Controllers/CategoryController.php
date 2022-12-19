@@ -94,4 +94,6 @@ class CategoryController extends Controller{
         return redirect()->route('crud-categories.index')
         ->with('info','La categoria se eliminó con exito');
     }
+
+
 }

@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Category;
 use Livewire\Component;
 use Illuminate\Support\Str;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 
 class CrudCategory extends Component{
 
@@ -57,6 +58,15 @@ class CrudCategory extends Component{
 
     public function delete($id){
         Category::find($id)->delete();
+    }
+
+
+    // Generate PDF
+    public function createPDF() {
+        $data = Category::all();
+        $pdf = FacadePdf::loadView('reporte/pdf_view',compact('data'));
+        //return $pdf->download('pdf_file.pdf');    //desacarga automaticamente
+        return $pdf->stream('reporte/pdf_view',compact('data')); //abre en una pestaña como pdf
     }
 
 }

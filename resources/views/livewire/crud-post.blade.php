@@ -19,6 +19,9 @@
                         @include('livewire.category-create')
                     @endif --}}
             </div>
+            <div>
+              <a href=""><i class="fa-solid fa-file-pdf"></i></a>
+            </div>
         </div>
         <!--Tabla lista de items   -->
         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">

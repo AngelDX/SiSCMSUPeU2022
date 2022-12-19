@@ -18,6 +18,9 @@
                         @include('livewire.category-create')
                     @endif
             </div>
+            <div class="ml-2">
+              <a href="{{ URL::to('/categories/pdf') }}" target="_blank"><i class="fa-solid fa-file-pdf fa-2x"></i></a>
+            </div>
         </div>
         <!--Tabla lista de items   -->
         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
