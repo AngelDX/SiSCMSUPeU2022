@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
+    protected $guarded=['id'];
     //Relación de * a *
     public function posts(){
         return $this->belongsToMany(Post::class);

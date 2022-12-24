@@ -4,6 +4,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Livewire\CrudCategory;
 use App\Http\Livewire\CrudPost;
 use App\Http\Livewire\IndexLivewire;
+use App\Http\Livewire\TagCrud;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,6 +44,8 @@ Route::middleware([
 
     //Route::resource('posts',CrudPost::class)->names('admin.posts');
     Route::get('/categories/pdf', [CrudCategory::class, 'createPDF']);
+    //Orientado a objetos
+    Route::get('/tags',TagCrud::class)->name('tags');
 });
 
 
